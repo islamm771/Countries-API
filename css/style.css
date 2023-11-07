@@ -1,0 +1,174 @@
+nav{
+    margin-bottom: 15px;
+    box-shadow: 0 0 8px 3px #DDD;
+    padding: 20px 15px;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 999;
+}
+nav .container{
+    display: flex;
+}
+nav h5{
+    margin: 0;
+}
+nav button{
+    margin-left: auto;
+    padding: 0 !important;
+}
+nav button img{
+    width: 20px;
+    margin-bottom: 1px;
+    margin-right: 5px;
+}
+.countries .row {
+    justify-content:center;
+}
+
+.country{
+    background-color: white;
+    box-shadow: 0 0 8px 3px #DDD;
+    margin: 0 20px;
+    margin-bottom: 60px;
+    transition: 0.5s;
+}
+.country img{
+    width: 100%;
+    height: 145px;
+    border-bottom: 1px solid #dddddd45;
+}
+.country .country-info{
+    padding: 25px 20px 40px;
+}
+.country .country-info p{
+    margin: 0;
+    font-size: 13px;
+}
+.country .country-info h5{
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.country-details{
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    min-height: calc(100% - 64px);
+    z-index: -1;
+}
+
+
+/* rawan */
+body{
+    min-height: 100vh;
+    --bgColor:hsl(0,0%,98%);
+    --fontColor:hsl(0,0,0);
+}
+
+button{
+    border: none;
+    border: 0;
+    background: transparent;
+}
+
+.switch{
+    font-size: 18px;
+    cursor: pointer;
+}
+.switch i{
+    padding-right: 5px;
+}
+
+.filters .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.form-control{
+    width: 400px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.form-control input{
+    width: 100%;
+    padding: 11px 14px;
+    border: 0;
+    font-size: 15px;
+    letter-spacing: .5px;
+    outline: 0;
+}
+
+.form-control button {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+i{
+    cursor: pointer;
+}
+
+.drop-down-con{
+    width: 200px;
+    position: relative;
+}
+.drop-down{
+    width: 100%;
+    padding: 17px 14px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    font-size: 15px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+
+}
+.drop-down p{
+    letter-spacing: 0.5px;
+    font-size: 15px;
+    margin: 0;
+}
+.drop{
+    display: block;
+    background-color: #fff;
+    position: absolute;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    top: 60px;
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.drop p{
+    margin: 0;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.drop p.active{
+    background-color: #eee;
+}
+
+.drop p:hover:not(.drop p.active){
+    padding-left: 20px;
+    background-color: #eee;
+}
+
+@media (min-width:768px){
+    .countries .row .country{
+        width: 400px !important;
+    }
+}
+
+@media (min-width:320px) and (max-width:480px) {
+    .country-details{
+        overflow-y: scroll;
+    }
+}

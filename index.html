@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countries</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/normalize.css">
+</head>
+
+<body class="root">
+    <nav>
+        <div class="container">
+        <h5>Where in the world?</h5>
+        <button class="switch"><i class="fas fa-moon"></i> Dark Mode</button>
+        </div>
+    </nav>
+
+    <!-- rawan  -->
+    <div class="filters pt-5 pb-3">
+        <div class="container">
+            <div class="form-control mb-4 mb-md-0">
+                <input class="search-bar" type="text" placeholder="Search For Country">
+                <button class="search"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            <div class="drop-down-con">
+                <div class="drop-down">
+                    <p>Filter By Region</p>
+                    <button class="search-btn"><i class="fas fa-chevron-down"></i></button>
+                </div>
+                <div class="drop d-none">
+                    <p class="active" data-cat="all">All</p>
+                    <p data-cat="Africa">Africa</p>
+                    <p data-cat="Americas">America</p>
+                    <p data-cat="Asia">Asia</p>
+                    <p data-cat="Europe">Europe</p>
+                    <p data-cat="Oceania">Oceania</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end rawan -->
+    <div class="countries pt-5">
+        <div class="container">
+            <div class="row">
+            </div>
+        </div>
+    </div>
+    <section class="country-details fade pt-5 pb-5">
+        <div class="container-fluid">
+            <button class="btn btn-primary mb-5 back">Back</button>
+            <div class="row">
+                <div class="col-md-6 mb-5 mb-md-0">
+                    <img class="flag-img img-fluid" src="" alt="">
+                </div>
+                <div class="col-md-6">
+                    <h5 class="heading-name">Name</h5>
+                    <div class="row">
+                        <div class="col-md-6 mb-5 mb-md-0">
+                            <p></p>
+                            <p></p>
+                            <p></p>
+                            <p></p>
+                            <p></p>
+                        </div>
+                        <div class="col-md-6">
+                            <p>Top Level Domain:</p>
+                            <p>Currencies:</p>
+                            <p>Languages:</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script type="module" src="./js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
