@@ -58,6 +58,10 @@ nav button img{
     z-index: -1;
 }
 
+.country-details .back{
+    box-shadow: 0 3px 5px 0 #0000006e;
+    width: 90px;
+}
 
 /* rawan */
 body{
