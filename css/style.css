@@ -227,16 +227,19 @@ body.dark .country-details{
 
 
 /* end dark mood */
-
-
-@media (min-width:768px){
-    /* .countries .row .country{
-        width: 250px !important;
-    } */
-}
-
-@media (min-width:320px) and (max-width:480px) {
+@media (min-width:320px) and (max-width:767px) {
     .country-details{
         overflow-y: scroll;
+    }
+    .country-details .details {
+        padding-left: 12px;
+        padding-top: 0;
+    }
+}
+
+@media (min-width:768px) and (max-width:991px) {
+    .country-details .details {
+        padding-left: 3rem;
+        padding-top: 0;
     }
 }
