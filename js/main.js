@@ -51,21 +51,21 @@ function FindCountry(name){
 
 function displayCountry(country){
     let Country = country[0]
-    let texts = document.querySelectorAll('.country-details .row p');
+    let texts = document.querySelectorAll('.country-details .row p span');
     document.querySelector(".heading-name").innerText = Country.name;
     document.querySelector(".flag-img").setAttribute("src", Country.flag);
-    texts[0].innerText = `Native name: ${Country.nativeName}`;
-    texts[1].innerText = `Population:  ${Country.population}`;
-    texts[2].innerText = `Region: ${Country.region}`;
-    texts[3].innerText = `Sub Region: ${Country.subregion}`;
-    texts[4].innerText = `Capital: ${Country.capital ? Country.capital : 'No Capital'}`;
-    texts[5].innerText = `Top Level Domain: ${Country.topLevelDomain[0]}`;
+    texts[0].innerText = `${Country.nativeName}`;
+    texts[1].innerText = `${Country.population}`;
+    texts[2].innerText = `${Country.region}`;
+    texts[3].innerText = `${Country.subregion}`;
+    texts[4].innerText = `${Country.capital ? Country.capital : 'No Capital'}`;
+    texts[5].innerText = `${Country.topLevelDomain[0]}`;
 
     var currencies = ""
     for (let curren in Country.currencies[0]) {
       currencies += Country.currencies[0][curren] + " ";
     }
-    texts[6].innerText = `Currencies: ${
+    texts[6].innerText = `${
       currencies ? currencies : 'No Currencies'
     }`;
 
@@ -73,7 +73,7 @@ function displayCountry(country){
     for (let lang in Country.languages[0]) {
       languages += Country.languages[0][lang] + " ";
     }
-    texts[7].innerText = `Languages: ${languages ? languages : 'No Languages'}`;
+    texts[7].innerText = ` ${languages ? languages : 'No Languages'}`;
 }
 
 

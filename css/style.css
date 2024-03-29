@@ -54,6 +54,7 @@ nav button img{
     font-size: 13px;
 }
 .country .country-info h5{
+    font-weight: 700;
     cursor: pointer;
     margin-bottom: 15px;
 }
@@ -62,6 +63,7 @@ nav button img{
     background-color: white;
     position: absolute;
     width: 100%;
+    top: 0;
     min-height: calc(100% - 64px);
     z-index: -1;
 }
@@ -69,6 +71,20 @@ nav button img{
 .country-details .back{
     box-shadow: 0 3px 5px 0 #0000006e;
     width: 90px;
+}
+
+.country-details img{
+    box-shadow: 0 0 4px 2px #eee;
+}
+
+.country-details .details{
+    padding-left: 5rem;
+    padding-top: 3rem;
+}
+
+.country-details .details .heading-name{
+    font-weight: 700;
+    margin-bottom: 2rem;
 }
 
 /* rawan */
@@ -120,10 +136,7 @@ button{
     right: 1rem;
     transform: translateY(-50%);
     cursor: pointer;
-}
-
-i{
-    cursor: pointer;
+    color: #888;
 }
 
 .drop-down-con{
@@ -207,6 +220,9 @@ body.dark .filters .drop p.active,
 body.dark .country-details{
     background-color: hsl(209, 23%, 22%);
     color: white;
+}
+.country-details img{
+    box-shadow: 0 3px 7px 0 #0000002c;
 }
 
 
