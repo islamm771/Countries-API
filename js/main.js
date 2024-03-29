@@ -2,6 +2,16 @@ let drop_down = document.querySelector(".drop-down");
 let Items = document.querySelectorAll(".drop p");
 import countries from "../json/data.json" assert { type: "json" };
 
+let btn_switch = document.querySelector(".switch");
+btn_switch.onclick = function(){
+  this.classList.toggle("dark")
+  if (this.querySelector("span").textContent == "Dark Mode") {
+    this.querySelector("span").textContent = "Light Mode";
+  }else{
+    this.querySelector("span").textContent = "Dark Mode";
+  }
+  document.querySelector("body").classList.toggle("dark")
+}
 
 console.log(countries);
 function displayCountries(Countries) {
@@ -10,13 +20,15 @@ function displayCountries(Countries) {
 
   });
 Countries.forEach((obj) => {
-    const markup = `<div class="country col-9 p-0 all ${obj.region}">
-                            <img class="img-fluid" src=${obj.flags.png} />
-                            <div class="country-info">
-                                <h5>${obj.name}</h5>
-                                <p><b>Population:</b> ${obj.population}</p>
-                                <p><b>Region:</b> ${obj.region}</p>
-                                <p><b>Capital:</b> ${obj.capital}</p>
+    const markup = `<div class="country col-md-4 col-lg-3 all ${obj.region}">
+                            <div>
+                              <img class="img-fluid" src=${obj.flags.png} />
+                              <div class="country-info">
+                                  <h5>${obj.name}</h5>
+                                  <p><b>Population:</b> ${obj.population}</p>
+                                  <p><b>Region:</b> ${obj.region}</p>
+                                  <p><b>Capital:</b> ${obj.capital}</p>
+                              </div>
                             </div>
                         </div>`;
     document
@@ -76,6 +88,7 @@ document.addEventListener("click" , function(e){
           ".country-details"
         ).style.cssText = `left:0;top:64px;z-index:10`;
         displayCountry(FindCountry(name));
+        window.scrollTo(0,0);
     }
 })
 
