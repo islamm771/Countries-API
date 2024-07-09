@@ -1,6 +1,17 @@
 let drop_down = document.querySelector(".drop-down");
 let Items = document.querySelectorAll(".drop p");
-import countries from "../json/data.json" assert { type: "json" };
+// import countries from "../json/data.json";
+let countries;
+
+
+const fetchCountries =  async () =>{
+  await fetch("https://restcountries.com/v3.1/all")
+  .then( res => res.json() )
+  .then( data => countries = data )
+}
+
+await fetchCountries();
+
 
 let btn_switch = document.querySelector(".switch");
 btn_switch.onclick = function(){
@@ -24,7 +35,7 @@ Countries.forEach((obj) => {
                             <div>
                               <img class="img-fluid" src=${obj.flags.png} />
                               <div class="country-info">
-                                  <h5>${obj.name}</h5>
+                                  <h5>${obj.name.common}</h5>
                                   <p><b>Population:</b> ${obj.population}</p>
                                   <p><b>Region:</b> ${obj.region}</p>
                                   <p><b>Capital:</b> ${obj.capital}</p>
@@ -42,7 +53,7 @@ let FoundCountires;
 function FindCountry(name){
   FoundCountires = []
     for (let i = 0; i < countries.length; i++) {
-      if (countries[i].name.toLocaleLowerCase().includes(name.toLocaleLowerCase())) {
+      if (countries[i].name.common.toLocaleLowerCase().includes(name.toLocaleLowerCase())) {
         FoundCountires.push(countries[i]);
       }
     }
@@ -51,27 +62,29 @@ function FindCountry(name){
 
 function displayCountry(country){
     let Country = country[0]
+    console.log(country)
     let texts = document.querySelectorAll('.country-details .row p span');
-    document.querySelector(".heading-name").innerText = Country.name;
-    document.querySelector(".flag-img").setAttribute("src", Country.flag);
-    texts[0].innerText = `${Country.nativeName}`;
+    document.querySelector(".heading-name").innerText = Country.name.common;
+    document.querySelector(".flag-img").setAttribute("src", Country.flags.png);
+    let key = Object.keys(Country.name.nativeName)[0]
+    texts[0].innerText = `${Country.name.nativeName[key].official}`;
     texts[1].innerText = `${Country.population}`;
     texts[2].innerText = `${Country.region}`;
     texts[3].innerText = `${Country.subregion}`;
     texts[4].innerText = `${Country.capital ? Country.capital : 'No Capital'}`;
-    texts[5].innerText = `${Country.topLevelDomain[0]}`;
+    // texts[5].innerText = `${Country.topLevelDomain[0]}`;
 
     var currencies = ""
-    for (let curren in Country.currencies[0]) {
-      currencies += Country.currencies[0][curren] + " ";
+    for (let curren in Country.currencies) {
+      currencies += Country.currencies[curren].symbol + " ";
     }
     texts[6].innerText = `${
       currencies ? currencies : 'No Currencies'
     }`;
 
     var languages = ""
-    for (let lang in Country.languages[0]) {
-      languages += Country.languages[0][lang] + " ";
+    for (let lang in Country.languages) {
+      languages += Country.languages[lang] + " ";
     }
     texts[7].innerText = ` ${languages ? languages : 'No Languages'}`;
 }
@@ -144,3 +157,14 @@ search_btn.onclick = function(){
   // console.log(FindCountry(search.value));
   displayCountries(FindCountry(search.value));
 }
+
+
+
+
+// document.onclick = function (e) {
+//   if(document.querySelector(".drop").classList.contains('d-none')){
+//     if(e.target !== document.querySelector(".drop")){
+//       document.querySelector(".drop").classList.add("d-none")
+//     }
+//   }
+// }
